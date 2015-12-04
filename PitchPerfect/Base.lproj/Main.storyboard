@@ -28,14 +28,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bf-Te-oE6">
-                                <rect key="frame" x="256" y="390" width="88" height="21"/>
+                                <rect key="frame" x="256" y="381" width="87.5" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk4-oO-gbd">
-                                <rect key="frame" x="248" y="275" width="104" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk4-oO-gbd">
+                                <rect key="frame" x="275" y="447" width="50" height="50"/>
                                 <animations/>
                                 <state key="normal" image="stop"/>
                                 <connections>
@@ -46,12 +46,12 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5bf-Te-oE6" firstAttribute="top" secondItem="yk4-oO-gbd" secondAttribute="bottom" constant="65" id="K8Z-WP-1FG"/>
-                            <constraint firstItem="5bf-Te-oE6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SiJ-Ne-vac"/>
-                            <constraint firstItem="yk4-oO-gbd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="e8o-vf-2jZ"/>
-                            <constraint firstItem="aiz-s6-7xB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gYD-Y0-czx"/>
-                            <constraint firstItem="aiz-s6-7xB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lg0-9m-LWA"/>
-                            <constraint firstItem="yk4-oO-gbd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="puH-gg-Lsl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5bf-Te-oE6" secondAttribute="bottom" constant="198" id="2Cg-EM-MUg"/>
+                            <constraint firstItem="aiz-s6-7xB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yz3-hR-CPx"/>
+                            <constraint firstItem="5bf-Te-oE6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gn6-0O-3RJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yk4-oO-gbd" secondAttribute="bottom" constant="103" id="heQ-P7-bwF"/>
+                            <constraint firstItem="aiz-s6-7xB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qgl-7y-jtV"/>
+                            <constraint firstItem="yk4-oO-gbd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tWY-uc-wyO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="rG2-Ab-WAq"/>

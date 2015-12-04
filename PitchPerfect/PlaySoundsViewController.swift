@@ -20,13 +20,6 @@ class PlaySoundsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        if let movieQuotePath = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3") {
-        //            let movieQuoteUrl = NSURL.fileURLWithPath(movieQuotePath)
-        //            audioPlayer = try! AVAudioPlayer(contentsOfURL: movieQuoteUrl)
-        //            audioPlayer.enableRate = true
-        //        } else {
-        //            print("THe file path was empty")
-        //        }
         audioPlayer = try! AVAudioPlayer(contentsOfURL: recievedAudio.filePathUrl)
         audioPlayer.enableRate = true
         audioEngine = AVAudioEngine()
@@ -42,12 +35,16 @@ class PlaySoundsViewController: UIViewController {
     
     //Mark: Buttons
     @IBAction func slowDownButtonPressed(sender: UIButton) {
+        audioEngine.stop()
+        audioEngine.reset()
         audioPlayer.stop()
         audioPlayer.rate = 0.5
         audioPlayer.play()
     }
     
     @IBAction func speedUpButtonPressed(sender: UIButton) {
+        audioEngine.stop()
+        audioEngine.reset()
         audioPlayer.stop()
         audioPlayer.rate = 2.0
         audioPlayer.play()

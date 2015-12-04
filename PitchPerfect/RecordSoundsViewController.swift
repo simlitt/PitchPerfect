@@ -23,16 +23,12 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     //Mark Actions
     @IBAction func recordAudio(sender: UIButton) {
+        recordingLabel.text = "Recording..."
         recordingLabel.hidden = false
         RecordingButton.hidden = true
         stopRecordingButton.hidden = false
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        
-//        let currentDateTime = NSDate()
-//        let dateFormatter = NSDateFormatter()
-//        dateFormatter.dateFormat = "ddMMyyyy-HHmmss"
-//        let recordingName = dateFormatter.stringFromDate(currentDateTime)+".wav"
         let recordingName = "my_audio.wav"
         let pathArray = [dirPath, recordingName]
         let filePath = NSURL.fileURLWithPathComponents(pathArray)
@@ -62,9 +58,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         
         if(flag) {
-        recordedAudio = RecordedAudio()
-        recordedAudio.filePathUrl = recorder.url
-        recordedAudio.title = recorder.url.lastPathComponent
+        recordedAudio = RecordedAudio(title: recorder.url.lastPathComponent!, filePathUrl: recorder.url)
+        
         
         self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
         } else {
@@ -90,7 +85,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         super.didReceiveMemoryWarning()
     }
     override func viewWillAppear(animated: Bool) {
-        recordingLabel.hidden = true
+        recordingLabel.text = "Tap to Record"
+        recordingLabel.hidden = false
         stopRecordingButton.hidden = true
     }
 
