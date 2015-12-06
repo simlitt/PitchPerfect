@@ -35,19 +35,13 @@ class PlaySoundsViewController: UIViewController {
     
     //Mark: Buttons
     @IBAction func slowDownButtonPressed(sender: UIButton) {
-        audioEngine.stop()
-        audioEngine.reset()
-        audioPlayer.stop()
-        audioPlayer.rate = 0.5
-        audioPlayer.play()
+        stopAllAudio()
+        playAudioWithRate(0.5)
     }
     
     @IBAction func speedUpButtonPressed(sender: UIButton) {
-        audioEngine.stop()
-        audioEngine.reset()
-        audioPlayer.stop()
-        audioPlayer.rate = 2.0
-        audioPlayer.play()
+        stopAllAudio()
+        playAudioWithRate(2.0)
     }
     
     @IBAction func chipmunkButtonPressed(sender: UIButton) {
@@ -59,13 +53,22 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func stopButtonPressed(sender: UIButton) {
-        audioPlayer.stop()
+        stopAllAudio()
     }
     
-    func playAudioWithVariablePitch(pitch: Float) {
+    func stopAllAudio() {
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
+    }
+    
+    func playAudioWithRate(rate: Float) {
+        audioPlayer.rate = rate
+        audioPlayer.play()
+    }
+    
+    func playAudioWithVariablePitch(pitch: Float) {
+        stopAllAudio()
         
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
